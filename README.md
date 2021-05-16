@@ -2,9 +2,6 @@
 
 <!--
 **SanderYaz/SanderYaz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.-->
-
-<img src="d.png">
-<body style="background-image:bg.webp;">
 <h1>  👋 Hello World! </h1></center>
 <h2> I'm Sander YAZICIOĞLU </h2>
 <h3> Web designer from Mugla, Turkey. I have rich experience in web site design and building, also I am good at wordpress. As a person who has always loved to spend time with a computer in my life and lived full of these times, I am a Web designer who lives in Muğla.Although I am currently student at Mugla Sıtkı Kocman University, I have been involved in many projects and have always found myself aiming for the better.</h3>
