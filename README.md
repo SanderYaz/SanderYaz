@@ -14,9 +14,10 @@
 ![](https://komarev.com/ghpvc/?username=SanderYaz&color=green)
 
 
-[!Sander's github stats((https://github-readme-stats.vercel.app/api?username=SanderYaz&count_private=true)](https://github-readme-stats.vercel.app/api?username=SanderYaz&show_icons=true&theme=radical)
-[![trophy](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)
+[!Sander's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&count_private=true)](https://github-readme-stats.vercel.app/api?username=SanderYaz&show_icons=true&theme=radical)
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)](https://github.com/SanderYaz/github-readme-stats)
+[![trophy](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)
+
 
 
 #### 📫 How to reach me:
