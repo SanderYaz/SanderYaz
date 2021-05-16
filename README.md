@@ -13,7 +13,7 @@
 [![Repos Badge](https://badges.pufler.dev/repos/SanderYaz)](https://badges.pufler.dev)
 [![Created Badge](https://badges.pufler.dev/created/SanderYaz/git-badges)](https://badges.pufler.dev)
 
-![Sander's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&count_private=true)
+[![Sander's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&count_private=true)]
 
 ![](https://komarev.com/ghpvc/?username=SanderYaz&color=green)
 
