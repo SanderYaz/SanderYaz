@@ -2,13 +2,15 @@
 
 <!--
 **SanderYaz/SanderYaz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.-->
-<p align="center">
+
 <img src="d.png">
 <body style="background-image:bg.webp;">
 <h1>  👋 Hello World! </h1></center>
 <h2> I'm Sander YAZICIOĞLU </h2>
 <h3> Web designer from Mugla, Turkey. I have rich experience in web site design and building, also I am good at wordpress. As a person who has always loved to spend time with a computer in my life and lived full of these times, I am a Web designer who lives in Muğla.Although I am currently student at Mugla Sıtkı Kocman University, I have been involved in many projects and have always found myself aiming for the better.</h3>
 
+
+<p align="center">
 
       <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="65" height="65"/> 
       <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="55" height="55"/>
@@ -21,6 +23,7 @@
       <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="azure" width="55" height="55"/> 
       <img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" alt="mysql" width="110" height="75"/> 
 
+</p>
 
 [![Years Badge](https://badges.pufler.dev/years/SanderYaz)](https://badges.pufler.dev)
 [![Repos Badge](https://badges.pufler.dev/repos/SanderYaz)](https://badges.pufler.dev)
@@ -60,6 +63,3 @@
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tensorflow/tensorflow.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/scikit-learn/scikit-learn.png"></code>
 
-
-
-</p>
