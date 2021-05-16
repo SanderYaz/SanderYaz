@@ -12,10 +12,9 @@
 [![Years Badge](https://badges.pufler.dev/years/SanderYaz)](https://badges.pufler.dev)
 [![Repos Badge](https://badges.pufler.dev/repos/SanderYaz)](https://badges.pufler.dev)
 [![Created Badge](https://badges.pufler.dev/created/SanderYaz/git-badges)](https://badges.pufler.dev)
-
+![](https://komarev.com/ghpvc/?username=SanderYaz&color=green)
 [![Sander's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&count_private=true)]
 
-![](https://komarev.com/ghpvc/?username=SanderYaz&color=green)
 
 #### 📫 How to reach me:
   
