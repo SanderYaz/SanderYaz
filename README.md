@@ -15,12 +15,15 @@
 
 
 ![Sander's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&count_private=true)
+[![Stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&show_icons=true&theme=radical)](https://github-readme-stats.vercel.app/api?username=SanderYaz&show_icons=true&theme=radical)
+[![trophy](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)](https://github.com/SanderYaz/github-readme-stats)
 
 
 #### 📫 How to reach me:
   
   [<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" width="3.5%"/>](https://steamcommunity.com/id/TheSanMan/)  &nbsp; 
-[<img src="https://github.com/sciencepal/sciencepal/blob/master/assets/discord-round.svg" width="3.5%"/>](https://discord.gg/Sanderyaz)  &nbsp; 
+[<img src="https://github.com/SanderYaz/SanderYaz/blob/master/assets/discord-round.svg" width="3.5%"/>](https://discord.gg/Sanderyaz)  &nbsp; 
 [<img src="https://img.icons8.com/color/48/000000/twitter.png" width="3.5%"/>](https://twitter.com/Sanderyaz)  &nbsp; 
 [<img src="https://img.icons8.com/color/48/000000/linkedin.png" width="3.5%"/>](https://www.linkedin.com/in/Sanderyaz/)  &nbsp; 
 [<img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" width="3.5%"/>](https://www.facebook.com/Sanderyaz/)  &nbsp; 
