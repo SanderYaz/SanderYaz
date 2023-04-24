@@ -6,9 +6,9 @@
 
 
 <p align="center">
-      <img src="https://www.vectorlogo.zone/logos/angular/angular-ar21.svg" alt="Angular" width="65" height="65"/> 
+      <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="Angular" width="65" height="65"/> 
       <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="65" height="65"/> 
-      <img src="https://www.vectorlogo.zone/logos/javascript/javascript-horizontal.svg" alt="js" width="95" height="55"/>
+      <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="js" width="95" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="55" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="Typescript" width="55" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="docker" width="85" height="70"/> 
