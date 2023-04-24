@@ -1,7 +1,11 @@
 <!--
 **SanderYaz/SanderYaz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.-->
-<h1>  👋 Hello World! </h1></center>
-<h2> I'm Sander YAZICIOĞLU </h2>
+<p align="center">
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&text=Welcome&height=100&section=header"/>
+</p>
+
+<h1 align="center">Hi I'm Sander Yazıcıoğlu<br>A Front-End Web Developer From Turkey</h1>
+
 <h3> I Full-Stack Developer and Game Developer from Turkey. I have rich experience in web site design and game developing. As a person who has always loved to spend time with computer in my life and lived full of these times, I am a Web designer who lives in istanbul. Also I am currently working frontend developer, I have been involved in many projects and have always found myself aiming for the better.</h3>
 
 
