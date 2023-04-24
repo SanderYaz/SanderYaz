@@ -6,25 +6,22 @@
 
 
 <p align="center">
-      <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="95" height="65"/> 
+      <img src="https://www.vectorlogo.zone/logos/angular/angular-ar21.svg" alt="Angular" width="65" height="65"/> 
+      <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="65" height="65"/> 
+      <img src="https://www.vectorlogo.zone/logos/javascript/javascript-horizontal.svg" alt="js" width="95" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="55" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="Typescript" width="55" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="docker" width="85" height="70"/> 
-      <img src="https://www.vectorlogo.zone/logos/javascript/javascript-horizontal.svg" alt="js" width="95" height="55"/>
+      <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="node" width="65" height="65"/> 
       <img src="https://www.vectorlogo.zone/logos/android/android-icon.svg" alt="android" width="55" height="55"/>
-      <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="GIT" width="55" height="55"/> 
-      <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-icon.svg" alt="IPYNB" width="55" height="55"/> 
       <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="azure" width="55" height="55"/> 
-      <img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" alt="mysql" width="110" height="75"/> 
 </p>
+<img src="https://github.com/SanderYaz/SanderYaz/blob/d039bc99749c0b0cf0154af7f378258e36ca20a2/github-contribution-grid-snake.svg" alt="Angular"/> 
 
-[![Years Badge](https://badges.pufler.dev/years/SanderYaz)](https://badges.pufler.dev)
-[![Repos Badge](https://badges.pufler.dev/repos/SanderYaz)](https://badges.pufler.dev)
+[![Years Badge](https://badges.strrl.dev/years/SanderYaz)](https://badges.pufler.dev)
+[![Repos Badge](https://badges.strrl.dev/repos/SanderYaz)](https://badges.pufler.dev)
 ![](https://komarev.com/ghpvc/?username=SanderYaz&color=green)
 
-
-![SanderYaz's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)](https://github.com/SanderYaz/github-readme-stats)
 [![trophy](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)](https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=juicyfresh&no-frame=true&row=1&&margin-w=20&no-bg=true)
 
 
@@ -55,3 +52,6 @@
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tensorflow/tensorflow.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/scikit-learn/scikit-learn.png"></code>
+      
+![SanderYaz's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)](https://github.com/SanderYaz/github-readme-stats)
