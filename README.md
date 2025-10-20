@@ -57,5 +57,5 @@
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tensorflow/tensorflow.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/scikit-learn/scikit-learn.png"></code>
       
-![SanderYaz's github stats](https://github-readme-stats.vercel.app/api?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)
+![SanderYaz's github stats](https://awesome-github-stats.azurewebsites.net/user-stats/sanderyaz?cardType=level&theme=gotham&preferLogin=true)]
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SanderYaz&layout=compact&text_color=daf7dc&bg_color=151515)](https://github.com/SanderYaz/github-readme-stats)
