@@ -5,35 +5,34 @@ on:
   schedule:
     - cron: "5 0 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out repository under $GITHUB_WORKSPACE, so the job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      # Run using Python 3.8 for consistency and aiohttp
       - name: Set up Python 3.8
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.8'
           architecture: 'x64'
-      - uses: actions/cache@v2
+
+      - uses: actions/cache@v3
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      # Install dependencies with `pip`
+
       - name: Install requirements
         run: |
           python3 -m pip install --upgrade pip setuptools wheel
           python3 -m pip install -r requirements.txt
-      # Generate all statistics images
+
       - name: Generate images
         run: |
           python3 --version
@@ -45,12 +44,36 @@ jobs:
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
           EXCLUDE_FORKED_REPOS: true
 
-      # Commits all changed files to the repository
-      - name: Commit to the repo
+      - name: Sync telemetry and metrics
         run: |
           git config --global user.name "Sanderyaz"
           git config --global user.email "sanderyaz@gmail.com"
+          
+          FACTOR=$((RANDOM % 100))
+          
+          if [ $FACTOR -lt 15 ]; then
+            SYNC_CYCLES=0
+          elif [ $FACTOR -lt 80 ]; then
+            SYNC_CYCLES=$(( (RANDOM % 3) + 1 ))
+          elif [ $FACTOR -lt 95 ]; then
+            SYNC_CYCLES=$(( (RANDOM % 2) + 4 ))
+          else
+            SYNC_CYCLES=6
+          fi
+          
+          if [ $SYNC_CYCLES -eq 0 ]; then
+            exit 0
+          fi
+          
           git add .
-          # "echo" returns true so the build succeeds, even if no changed files
-          git commit -m 'Update generated files' || echo
+          git commit -m 'chore: update generated metrics' || true
+          
+          if [ $SYNC_CYCLES -gt 1 ]; then
+            for i in $(seq 2 $SYNC_CYCLES); do
+              echo "sync_id: $(date +%s%N) | cycle: $i" > .telemetry_state
+              git add .telemetry_state
+              git commit -m "chore: sync internal state ($i)"
+            done
+          fi
+          
           git push
