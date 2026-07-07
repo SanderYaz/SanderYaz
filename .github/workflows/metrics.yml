@@ -1,7 +1,6 @@
-name: Sander YAZICIOGLU | Update Stats
+name: Update Profile Stats
+
 on:
-  push:
-    branches: [ main ]
   schedule:
     - cron: "5 0 * * *"
   workflow_dispatch:
@@ -9,31 +8,38 @@ on:
 permissions:
   contents: write
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+concurrency:
+  group: update-profile-stats
+  cancel-in-progress: false
 
-      - name: Set up Python 3.8
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
-          architecture: 'x64'
+          python-version: "3.8"
+          architecture: "x64"
 
-      - uses: actions/cache@v3
+      - name: Cache pip packages
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install requirements
+      - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip setuptools wheel
           python3 -m pip install -r requirements.txt
 
-      - name: Generate images
+      - name: Generate profile assets
         run: |
           python3 --version
           python3 generate_images.py
@@ -44,36 +50,25 @@ jobs:
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
           EXCLUDE_FORKED_REPOS: true
 
-      - name: Sync telemetry and metrics
+      - name: Update repository stats
         run: |
-          git config --global user.name "Sanderyaz"
-          git config --global user.email "sanderyaz@gmail.com"
-          
-          FACTOR=$((RANDOM % 100))
-          
-          if [ $FACTOR -lt 15 ]; then
-            SYNC_CYCLES=0
-          elif [ $FACTOR -lt 80 ]; then
-            SYNC_CYCLES=$(( (RANDOM % 3) + 1 ))
-          elif [ $FACTOR -lt 95 ]; then
-            SYNC_CYCLES=$(( (RANDOM % 2) + 4 ))
-          else
-            SYNC_CYCLES=6
-          fi
-          
-          if [ $SYNC_CYCLES -eq 0 ]; then
+          git config user.name "SanderYaz"
+          git config user.email "darknessanman@gmail.com"
+
+          mkdir -p .github/profile
+
+          {
+            echo "updated_at=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo "run_number=${GITHUB_RUN_NUMBER}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+          } > .github/profile/stats.env
+
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
             exit 0
           fi
-          
-          git add .
-          git commit -m 'chore: update generated metrics' || true
-          
-          if [ $SYNC_CYCLES -gt 1 ]; then
-            for i in $(seq 2 $SYNC_CYCLES); do
-              echo "sync_id: $(date +%s%N) | cycle: $i" > .telemetry_state
-              git add .telemetry_state
-              git commit -m "chore: sync internal state ($i)"
-            done
-          fi
-          
+
+          git commit -m "chore: update profile stats"
           git push
