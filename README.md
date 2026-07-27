@@ -59,26 +59,24 @@
   <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure" width="42" height="42"/>
 </p>
 
-<p align="center">
-  <img
-    width="49%"
-    src="https://ghstats.dev/api/card?username=SanderYaz&theme=tokyonight"
-    alt="SanderYaz GitHub statistics"
-  />
-  <img
-    width="49%"
-    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=SanderYaz&theme=tokyonight&exclude=html,css"
-    alt="Most used languages"
-  />
-</p>
-
-<p align="center">
-  <img
-    width="100%"
-    src="https://github-profile-trophy.vercel.app/?username=SanderYaz&theme=tokyonight&no-frame=true&no-bg=true&column=6&margin-w=8&margin-h=8"
-    alt="GitHub trophies"
-  />
-</p>
+<table align="center">
+  <tr>
+    <td width="50%" align="center">
+      <img
+        width="100%"
+        src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=SanderYaz&theme=tokyonight"
+        alt="SanderYaz GitHub statistics"
+      />
+    </td>
+    <td width="50%" align="center">
+      <img
+        width="100%"
+        src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=SanderYaz&theme=tokyonight"
+        alt="Most used languages"
+      />
+    </td>
+  </tr>
+</table>
 
 <p align="center">
   <img
