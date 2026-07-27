@@ -16,97 +16,180 @@
 </p>
 
 <p align="center">
-  Senior Frontend Developer with <strong>6+ years of experience</strong> building scalable SaaS products,
-  modern frontend architectures and developer-focused platforms.
+  Senior Frontend Developer with <strong>6+ years of experience</strong>
+  building scalable SaaS products, modern frontend architectures and
+  developer-focused platforms.
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/Sanderyaz/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img
+      src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"
+      alt="LinkedIn"
+    />
   </a>
   <a href="mailto:sanderyaz@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
+    <img
+      src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white"
+      alt="Email"
+    />
   </a>
   <a href="https://steamcommunity.com/id/TheSanMan/">
-    <img src="https://img.shields.io/badge/Steam-171A21?style=flat-square&logo=steam&logoColor=white" alt="Steam"/>
+    <img
+      src="https://img.shields.io/badge/Steam-171A21?style=flat-square&logo=steam&logoColor=white"
+      alt="Steam"
+    />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=SanderYaz&label=Views&color=2563EB&style=flat-square" alt="Profile views"/>
+  <img
+    src="https://komarev.com/ghpvc/?username=SanderYaz&label=Views&color=2563EB&style=flat-square"
+    alt="Profile views"
+  />
 </p>
-
-<p align="center">
-  <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="Angular" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="TypeScript" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Java" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" width="45" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL" width="38" height="38"/>
-  &nbsp;
-  <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure" width="38" height="38"/>
-</p>
-
-<table align="center">
-  <tr>
-    <td width="50%" align="center" valign="middle">
-      <img
-        width="410"
-        src="https://ghstats.dev/api/card?username=SanderYaz&theme=tokyonight"
-        alt="SanderYaz GitHub statistics"
-      />
-    </td>
-    <td width="50%" align="center" valign="middle">
-      <img
-        width="410"
-        src="https://icon.mzrdev.com/stats?username=SanderYaz&theme=dark"
-        alt="SanderYaz contribution streaks"
-      />
-    </td>
-  </tr>
-</table>
 
 <p align="center">
   <img
-    width="92%"
-    src="https://icon.mzrdev.com/trophy?username=SanderYaz&theme=dark"
-    alt="SanderYaz GitHub trophies"
+    src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg"
+    alt="Angular"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
+    alt="React"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg"
+    alt="TypeScript"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg"
+    alt="JavaScript"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg"
+    alt="Node.js"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/java/java-icon.svg"
+    alt="Java"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/python/python-icon.svg"
+    alt="Python"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg"
+    alt="Docker"
+    width="45"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg"
+    alt="MongoDB"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg"
+    alt="PostgreSQL"
+    width="38"
+    height="38"
+  />
+  &nbsp;
+  <img
+    src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg"
+    alt="Azure"
+    width="38"
+    height="38"
+  />
+</p>
+
+<p align="center">
+  <img
+    width="420"
+    src="https://ghstats.dev/api/card?username=SanderYaz&theme=tokyonight"
+    alt="SanderYaz GitHub statistics"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://img.shields.io/github/followers/SanderYaz?style=for-the-badge&logo=github&label=Followers&color=7C3AED"
+    alt="GitHub followers"
+  />
+  <img
+    src="https://img.shields.io/badge/Experience-6%2B%20Years-2563EB?style=for-the-badge&logo=github"
+    alt="6+ years experience"
+  />
+  <img
+    src="https://img.shields.io/badge/Focus-Frontend%20Architecture-0891B2?style=for-the-badge"
+    alt="Frontend Architecture"
+  />
+  <img
+    src="https://img.shields.io/badge/Stack-Full--Stack-0F766E?style=for-the-badge"
+    alt="Full-Stack"
   />
 </p>
 
 <p align="center">
   <img
     width="100%"
-    src="https://icon.mzrdev.com/snk?username=SanderYaz&palette=github-dark&color_bar_by_eaten=true&show_score=true&speed=1"
+    src="https://raw.githubusercontent.com/SanderYaz/SanderYaz/main/github-contribution-grid-snake.svg"
     alt="SanderYaz animated contribution snake"
   />
 </p>
 
 <p align="center">
   <a href="https://twitter.com/Sanderyaz">
-    <img src="https://img.icons8.com/color/48/twitter.png" width="32" alt="Twitter"/>
+    <img
+      src="https://img.icons8.com/color/48/twitter.png"
+      width="32"
+      alt="Twitter"
+    />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/Sanderyaz/">
-    <img src="https://img.icons8.com/color/48/linkedin.png" width="32" alt="LinkedIn"/>
+    <img
+      src="https://img.icons8.com/color/48/linkedin.png"
+      width="32"
+      alt="LinkedIn"
+    />
   </a>
   &nbsp;
   <a href="https://www.instagram.com/Sanderyaz/">
-    <img src="https://img.icons8.com/fluency/48/instagram-new.png" width="32" alt="Instagram"/>
+    <img
+      src="https://img.icons8.com/fluency/48/instagram-new.png"
+      width="32"
+      alt="Instagram"
+    />
   </a>
   &nbsp;
   <a href="mailto:sanderyaz@gmail.com">
-    <img src="https://img.icons8.com/color/48/gmail-new.png" width="32" alt="Gmail"/>
+    <img
+      src="https://img.icons8.com/color/48/gmail-new.png"
+      width="32"
+      alt="Gmail"
+    />
   </a>
 </p>
-::: ​​
