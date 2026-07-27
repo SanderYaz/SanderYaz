@@ -1,9 +1,18 @@
-name: Update Profile Stats
+name: Sander YAZICIOGLU | Update Stats
 
 on:
   schedule:
-    - cron: "5 0 * * *"
+    # GitHub cron değerleri UTC'dir.
+    # 20:37 UTC = Türkiye saatiyle 23:37.
+    - cron: "37 20 * * *"
+
   workflow_dispatch:
+    inputs:
+      commit_count:
+        description: "random, 0, 1, 2, 3, 4, 5 veya 9"
+        required: false
+        default: "random"
+        type: string
 
 permissions:
   contents: write
@@ -16,23 +25,36 @@ jobs:
   update:
     runs-on: ubuntu-latest
 
+    env:
+      TZ: Europe/Istanbul
+
+      PROFILE_GIT_NAME: SanderYaz
+
+      # Repository variable tanımlarsan onu kullanır.
+      # Tanımlamazsan aşağıdaki e-postaya düşer.
+      PROFILE_GIT_EMAIL: ${{ vars.PROFILE_GIT_EMAIL || 'darknessanman@gmail.com' }}
+
+      # Manuel çalıştırmada 0,1,2,3,4,5 veya 9 verilebilir.
+      # Scheduled çalışmada "random" olur.
+      MANUAL_COUNT: ${{ github.event.inputs.commit_count || 'random' }}
+
+      # İsteğe bağlı secret. Yoksa repository adı seed olarak kullanılır.
+      RANDOM_SEED: ${{ secrets.PROFILE_RANDOM_SEED }}
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: main
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.8"
           architecture: "x64"
-
-      - name: Cache pip packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          cache: "pip"
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
         run: |
@@ -50,10 +72,25 @@ jobs:
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
           EXCLUDE_FORKED_REPOS: true
 
-      - name: Update repository stats
+      - name: Create randomized profile commits
+        shell: bash
         run: |
-          git config user.name "SanderYaz"
-          git config user.email "darknessanman@gmail.com"
+          set -euo pipefail
+
+          git config user.name "$PROFILE_GIT_NAME"
+          git config user.email "$PROFILE_GIT_EMAIL"
+
+          # Scheduled workflow gecikerek gece yarısını geçerse bile,
+          # commitleri planlanan UTC gününe yazar.
+          if [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
+            TODAY="$(date -u +%F)"
+          else
+            TODAY="$(date +%F)"
+          fi
+
+          # Secret tanımlı değilse repository adından sabit seed üret.
+          # Böylece aynı gün workflow tekrar çalışırsa hedef değişmez.
+          SEED="${RANDOM_SEED:-${GITHUB_REPOSITORY}:profile-stats-v1}"
 
           mkdir -p .github/profile
 
@@ -63,12 +100,202 @@ jobs:
             echo "workflow=${GITHUB_WORKFLOW}"
           } > .github/profile/stats.env
 
-          git add .
+          # Manuel çalıştırmada sayı verilmişse onu kullan.
+          # Aksi halde güne bağlı, tekrar çalıştırmalarda değişmeyen
+          # pseudo-random bir hedef oluştur.
+          if [[ "$MANUAL_COUNT" =~ ^(0|1|2|3|4|5|9)$ ]]; then
+            TARGET="$MANUAL_COUNT"
+          else
+            TARGET="$(
+              python3 - "$TODAY" "$SEED" <<'PY'
+          import hashlib
+          import sys
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
+          day, seed = sys.argv[1:3]
+
+          digest = hashlib.sha256(
+              f"{seed}:{day}:commit-count".encode()
+          ).digest()
+
+          roll = int.from_bytes(digest[:8], "big") % 100
+
+          # Dağılım:
+          # 0  -> %20
+          # 1  -> %5
+          # 2  -> %15
+          # 3  -> %30
+          # 4  -> %17
+          # 5  -> %11
+          # 9  -> %2
+          if roll < 20:
+              count = 0
+          elif roll < 25:
+              count = 1
+          elif roll < 40:
+              count = 2
+          elif roll < 70:
+              count = 3
+          elif roll < 87:
+              count = 4
+          elif roll < 98:
+              count = 5
+          else:
+              count = 9
+
+          print(count)
+          PY
+            )"
+          fi
+
+          echo "Date: $TODAY"
+          echo "Daily target: $TARGET"
+
+          # Gerçek 0-commit günü.
+          # Bu durumda oluşturulan görseller de repository'ye gönderilmez.
+          if (( TARGET == 0 )); then
+            echo "Rest day selected. No commit will be created."
             exit 0
           fi
 
-          git commit -m "chore: update profile stats"
-          git push
+          LOG_DIR=".github/profile/activity"
+          LOG_FILE="${LOG_DIR}/${TODAY}.jsonl"
+
+          mkdir -p "$LOG_DIR"
+
+          # Workflow aynı gün yeniden çalıştırılırsa önceki otomatik
+          # commitleri say ve günlük hedefi aşma.
+          EXISTING=0
+
+          if [[ -f "$LOG_FILE" ]]; then
+            EXISTING="$(
+              grep -cve '^[[:space:]]*$' "$LOG_FILE" || true
+            )"
+          fi
+
+          echo "Existing automated commits today: $EXISTING"
+
+          if (( EXISTING >= TARGET )); then
+            echo "Daily target already reached: $EXISTING/$TARGET"
+            exit 0
+          fi
+
+          REMAINING=$((TARGET - EXISTING))
+
+          echo "Commits to create: $REMAINING"
+
+          # Commit tarihlerini aynı gün içinde farklı saatlere dağıt.
+          # Hem author date hem committer date aynı değerle yazılacak.
+          mapfile -t COMMIT_DATES < <(
+            python3 - "$TARGET" "$TODAY" "$SEED" <<'PY'
+          import hashlib
+          import random
+          import sys
+          from datetime import datetime, timedelta, timezone
+
+          count = int(sys.argv[1])
+          day = sys.argv[2]
+          seed_text = sys.argv[3]
+
+          if count <= 0:
+              raise SystemExit(0)
+
+          turkey_timezone = timezone(timedelta(hours=3))
+          now = datetime.now(turkey_timezone).replace(microsecond=0)
+
+          start = datetime.fromisoformat(
+              f"{day}T08:30:00+03:00"
+          )
+
+          day_end = datetime.fromisoformat(
+              f"{day}T23:30:00+03:00"
+          )
+
+          end = min(
+              now - timedelta(seconds=30),
+              day_end,
+          )
+
+          # Workflow sabah manuel çalıştırılırsa gece yarısından
+          # şu ana kadar olan zaman aralığını kullan.
+          if start >= end:
+              start = datetime.fromisoformat(
+                  f"{day}T00:00:00+03:00"
+              )
+
+          if start >= end:
+              start = end - timedelta(
+                  seconds=max(30, count * 3)
+              )
+
+          span = int((end - start).total_seconds())
+
+          if span < count:
+              start = end - timedelta(
+                  seconds=max(30, count * 3)
+              )
+              span = int((end - start).total_seconds())
+
+          seed = int.from_bytes(
+              hashlib.sha256(
+                  f"{seed_text}:{day}:commit-times".encode()
+              ).digest()[:16],
+              "big",
+          )
+
+          rng = random.Random(seed)
+
+          offsets = sorted(
+              rng.sample(range(span + 1), count)
+          )
+
+          for offset in offsets:
+              timestamp = start + timedelta(seconds=offset)
+              print(timestamp.isoformat(timespec="seconds"))
+          PY
+          )
+
+          if (( ${#COMMIT_DATES[@]} != TARGET )); then
+            echo "Expected $TARGET timestamps, received ${#COMMIT_DATES[@]}." >&2
+            exit 1
+          fi
+
+          # Her commit gerçek bir activity-log satırı içerir.
+          # Boş commit kullanılmaz.
+          for ((i = EXISTING + 1; i <= TARGET; i++)); do
+            STAMP="${COMMIT_DATES[$((i - 1))]}"
+
+            printf \
+              '{"timestamp":"%s","run_number":%s,"sequence":%s,"total":%s,"workflow":"%s"}\n' \
+              "$STAMP" \
+              "$GITHUB_RUN_NUMBER" \
+              "$i" \
+              "$TARGET" \
+              "$GITHUB_WORKFLOW" \
+              >> "$LOG_FILE"
+
+            # generate_images.py çıktıları ilk committe,
+            # activity log ise her committe yer alır.
+            git add -A
+
+            # .gitignore içinde olsa bile activity logunu ekle.
+            git add -f "$LOG_FILE"
+
+            if git diff --cached --quiet; then
+              echo "No staged change for commit $i/$TARGET." >&2
+              exit 1
+            fi
+
+            if (( i == 1 )); then
+              MESSAGE="chore(profile): refresh generated stats"
+            else
+              MESSAGE="chore(profile): record stats snapshot $i/$TARGET"
+            fi
+
+            echo "Creating commit $i/$TARGET at $STAMP"
+
+            GIT_AUTHOR_DATE="$STAMP" \
+            GIT_COMMITTER_DATE="$STAMP" \
+              git commit -m "$MESSAGE"
+          done
+
+          git push origin HEAD:main
